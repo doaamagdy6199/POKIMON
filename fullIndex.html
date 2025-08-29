@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokédex — Pokémon-Themed HTML + CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ff1c1c'/%3E%3Cpath d='M2 32h60' stroke='%23000' stroke-width='6'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23fff' stroke='%23000' stroke-width='6'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23d9f4ff'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+  <div class="wrap pokedex">
+    <header>
+      <div class="logo">
+        <div class="pokeball" aria-hidden="true"></div>
+        <div>
+          <h1 >Pokédex</h1>
+          <div class="tag" aria-label="theme">Gotta CSS 'Em All!</div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="search" title="Decorative only in this HTML+CSS version">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/></svg>
+          <input type="search" placeholder="Search Pokémon (decorative)" aria-label="Search (decorative only)" />
+        </div>
+      </div>
+    </header>
+      
+
+
+    <fieldset class="filters">
+      <legend>Filter by Type (pure CSS)</legend>
+      <!-- Each label styled as a chip with a checkbox inside -->
+      <label class="chip" style="--c:var(--fire)"><input id="type-fire" type="checkbox" />Fire</label>
+      <label class="chip" style="--c:var(--water)"><input id="type-water" type="checkbox" />Water</label>
+      <label class="chip" style="--c:var(--grass)"><input id="type-grass" type="checkbox" />Grass</label>
+      <label class="chip" style="--c:var(--electric)"><input id="type-electric" type="checkbox" />Electric</label>
+      <label class="chip" style="--c:var(--psychic)"><input id="type-psychic" type="checkbox" />Psychic</label>
+      <label class="chip" style="--c:var(--ice)"><input id="type-ice" type="checkbox" />Ice</label>
+      <label class="chip" style="--c:var(--fighting)"><input id="type-fighting" type="checkbox" />Fighting</label>
+      <label class="chip" style="--c:var(--poison)"><input id="type-poison" type="checkbox" />Poison</label>
+      <label class="chip" style="--c:var(--ground)"><input id="type-ground" type="checkbox" />Ground</label>
+      <label class="chip" style="--c:var(--flying)"><input id="type-flying" type="checkbox" />Flying</label>
+      <label class="chip" style="--c:var(--bug)"><input id="type-bug" type="checkbox" />Bug</label>
+      <label class="chip" style="--c:var(--rock)"><input id="type-rock" type="checkbox" />Rock</label>
+      <label class="chip" style="--c:var(--ghost)"><input id="type-ghost" type="checkbox" />Ghost</label>
+      <label class="chip" style="--c:var(--dragon)"><input id="type-dragon" type="checkbox" />Dragon</label>
+      <label class="chip" style="--c:var(--dark)"><input id="type-dark" type="checkbox" />Dark</label>
+      <label class="chip" style="--c:var(--steel)"><input id="type-steel" type="checkbox" />Steel</label>
+      <label class="chip" style="--c:var(--fairy)"><input id="type-fairy" type="checkbox" />Fairy</label>
+    </fieldset>
+
+    <section class="grid" aria-label="Pokémon cards">
+      <!-- SAMPLE CARDS: Replace/extend with your data. data-type lists space-separated types. -->
+      <article class="card" data-type="grass poison" data-main="grass">
+        <div class="num">#001</div>
+        <img class="sprite" alt="Bulbasaur" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" />
+        <h2 class="name">Bulbasaur</h2>
+        <div class="types">
+          <span class="badge type-grass">Grass</span>
+          <span class="badge type-poison">Poison</span>
+        </div>
+        <div class="meta"><span>Seed Pokémon</span><span>Ht 0.7m · Wt 6.9kg</span></div>
+      </article>
+
+      <article class="card" data-type="fire" data-main="fire">
+        <div class="num">#004</div>
+        <img class="sprite" alt="Charmander" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" />
+        <h2 class="name">Charmander</h2>
+        <div class="types">
+          <span class="badge type-fire">Fire</span>
+        </div>
+        <div class="meta"><span>Lizard Pokémon</span><span>Ht 0.6m · Wt 8.5kg</span></div>
+      </article>
+
+      <article class="card" data-type="water" data-main="water">
+        <div class="num">#007</div>
+        <img class="sprite" alt="Squirtle" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" />
+        <h2 class="name">Squirtle</h2>
+        <div class="types">
+          <span class="badge type-water">Water</span>
+        </div>
+        <div class="meta"><span>Tiny Turtle Pokémon</span><span>Ht 0.5m · Wt 9.0kg</span></div>
+      </article>
+
+      <article class="card" data-type="electric" data-main="electric">
+        <div class="num">#025</div>
+        <img class="sprite" alt="Pikachu" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" />
+        <h2 class="name">Pikachu</h2>
+        <div class="types">
+          <span class="badge type-electric">Electric</span>
+        </div>
+        <div class="meta"><span>Mouse Pokémon</span><span>Ht 0.4m · Wt 6.0kg</span></div>
+      </article>
+
+      <article class="card" data-type="normal fairy" data-main="fairy">
+        <div class="num">#039</div>
+        <img class="sprite" alt="Jigglypuff" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png" />
+        <h2 class="name">Jigglypuff</h2>
+        <div class="types">
+          <span class="badge type-normal">Normal</span>
+          <span class="badge type-fairy">Fairy</span>
+        </div>
+        <div class="meta"><span>Balloon Pokémon</span><span>Ht 0.5m · Wt 5.5kg</span></div>
+      </article>
+
+      <article class="card" data-type="ghost poison" data-main="ghost">
+        <div class="num">#094</div>
+        <img class="sprite" alt="Gengar" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png" />
+        <h2 class="name">Gengar</h2>
+        <div class="types">
+          <span class="badge type-ghost">Ghost</span>
+          <span class="badge type-poison">Poison</span>
+        </div>
+        <div class="meta"><span>Shadow Pokémon</span><span>Ht 1.5m · Wt 40.5kg</span></div>
+      </article>
+
+      <article class="card" data-type="rock ground" data-main="rock">
+        <div class="num">#095</div>
+        <img class="sprite" alt="Onix" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png" />
+        <h2 class="name">Onix</h2>
+        <div class="types">
+          <span class="badge type-rock">Rock</span>
+          <span class="badge type-ground">Ground</span>
+        </div>
+        <div class="meta"><span>Rock Snake Pokémon</span><span>Ht 8.8m · Wt 210.0kg</span></div>
+      </article>
+
+      <article class="card" data-type="normal" data-main="normal">
+        <div class="num">#133</div>
+        <img class="sprite" alt="Eevee" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" />
+        <h2 class="name">Eevee</h2>
+        <div class="types">
+          <span class="badge type-normal">Normal</span>
+        </div>
+        <div class="meta"><span>Evolution Pokémon</span><span>Ht 0.3m · Wt 6.5kg</span></div>
+      </article>
+
+      <article class="card" data-type="normal" data-main="normal">
+        <div class="num">#143</div>
+        <img class="sprite" alt="Snorlax" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png" />
+        <h2 class="name">Snorlax</h2>
+        <div class="types">
+          <span class="badge type-normal">Normal</span>
+        </div>
+        <div class="meta"><span>Sleeping Pokémon</span><span>Ht 2.1m · Wt 460.0kg</span></div>
+      </article>
+
+      <article class="card" data-type="psychic" data-main="psychic">
+        <div class="num">#150</div>
+        <img class="sprite" alt="Mewtwo" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" />
+        <h2 class="name">Mewtwo</h2>
+        <div class="types">
+          <span class="badge type-psychic">Psychic</span>
+        </div>
+        <div class="meta"><span>Genetic Pokémon</span><span>Ht 2.0m · Wt 122.0kg</span></div>
+      </article>
+    </section>
+
+    <footer>
+      Built with ♥ using only HTML + CSS. Sprite art from PokeAPI official artwork CDN. Add your own data or wire to an API later.
+    </footer>
+  </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
